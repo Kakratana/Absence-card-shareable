@@ -135,6 +135,7 @@ download.addEventListener("click", function(){
 
 
 async function onShares() {
+        let inName = document.getElementById("inName").value;
         const dataUrl = canvas.toDataURL();
         const blob = await (await fetch(dataUrl)).blob(); //not change
         const filesArray = [
@@ -147,8 +148,9 @@ async function onShares() {
                 }
             )
         ]; //not chagne
-        const shareData = {
-            files: filesArray,
+    const shareData = {
+            text: inName,
+            files: filesArray
         }; //not change
         navigator.share(shareData);
     }
