@@ -135,8 +135,8 @@ download.addEventListener("click", function(){
 
 
 async function onShares() {
-    let noteName = document.getElementById("inName").value;
-    let addName = noteName.innerHTML;
+    var x = document.getElementById("inName").value;
+    var addName = x.innerHTML;
 
         const note = 'សូមគោរព ជំរាបសួរលោកប្រធាន និងថ្នាក់ដឹកនាំ។ ខ្ញុំបាទ/នាងខ្ញុំ ' + addName + ' សុំអនុញ្ញាតច្បាប់សម្រាកដូចទម្រង់ស្នើសុំខាងលើ សូមលោកប្រធាន និងថ្នាក់ដឹកនាំមេត្តាពិនិត្យឲ្យក្តីអនុគ្រោះ។';
         const dataUrl = canvas.toDataURL();
