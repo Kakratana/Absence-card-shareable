@@ -135,7 +135,8 @@ download.addEventListener("click", function(){
 
 
 async function onShares() {
-        let inName = document.getElementById("inName").value;
+    const noteName = document.getElementById("inName").value;
+    const note = 'សូមគោរព នឹងជំរាបសួរ លោកប្រធាន នឹងថ្នាក់ដឹកនាំក្រុមហ៊ុន។ ' + noteName + '  សុំអនុញ្ញាតច្បាប់សម្រាក ដូចទំរង់សុំខាងលើ។';
         const dataUrl = canvas.toDataURL();
         const blob = await (await fetch(dataUrl)).blob(); 
         const filesArray = [
@@ -149,7 +150,7 @@ async function onShares() {
             )
         ]; 
     const shareData = {
-            text: 'សូមគោរព នឹងជំរាបសួរ លោកប្រធាន នឹងថ្នាក់ដឹកនាំក្រុមហ៊ុន។ ខ្ញុំបាទ/នាង​ខ្ញុំ សុំអនុញ្ញាតច្បាប់សម្រាក ដូចទំរង់សុំខាងក្រោម។',
+        text: note ,
             files: filesArray
         }; 
         navigator.share(shareData);
