@@ -37,7 +37,7 @@
             <!-- <label style="width: 100%; float: left; font-size: 12pt; color: #757575;">ចាប់ពីថ្ងៃទី</label> -->
 
 
-            <select style="width: 45%; float: left; margin-right: 1%;" id="inDateF" placeholder="ចាប់ពីថ្ងៃទី..." required>
+            <select style="width: 47%; float: left; margin-right: 1%;" id="inDateF" onchange="calc()" placeholder="" required>
                 <option value="ថ្ងៃទី" selected disabled hidden>ចាប់ពីថ្ងៃទី</option>
                 <option value=1>1</option>
                 <option value=2>2</option>
@@ -76,7 +76,7 @@
             <input type="text" style="width: 23%; float: left; margin-right: 1%;" id="inYearF" value="" required>
 
             <!-- <label style="width: 100%; float: left;  font-size: 12pt; color: #757575;">ដល់ថ្ងៃទី</label> -->
-            <select style="width: 45%; float: left; margin-right: 1%;" id="inDateT" placeholder="ដល់​ថ្ថ្ងៃទី..." required>
+            <select style="width: 47%; float: left; margin-right: 1%;" id="inDateT" placeholder="" required>
                 <option value="ថ្ងៃទី" selected disabled hidden>ដល់ថ្ងៃទី</option>
                 <option value=1>1</option>
                 <option value=2>2</option>
@@ -115,7 +115,7 @@
             <input type="text" style="width: 23%; float: left; margin-right: 1%;" id="inYearT" value="" required>
 
             <!-- <label style="width: 100%; float: left;  font-size: 12pt; color: #757575;">ចូលធ្វើការវិញថ្ងៃទី</label> -->
-            <select style="width: 45%; float: left; margin-right: 1%;" id="inDateI" placeholder="ចាប់ពីថ្ងៃទី..." required>
+            <select style="width: 47%; float: left; margin-right: 1%;" id="inDateI" placeholder="" required>
                 <option value="ថ្ងៃទី" selected disabled hidden>ចូលធ្វើការវិញថ្ងៃទី</option>
                 <option value=1>1</option>
                 <option value=2>2</option>
@@ -260,6 +260,27 @@
         document.getElementById("inYearF").value = year;
         document.getElementById("inYearT").value = year;
         document.getElementById("inYearI").value = year;
+
+
+
+            function calc() {
+                let dateP = Number(document.querySelector("#inDays").value);
+                let dateF = Number(document.querySelector("#inDateF").value);
+                let dateI = Number(document.querySelector("#inDateI").value);
+                let sum = dateF + dateP - 1;
+                let back = sum + 1;
+
+                if (dateP <= 1) {
+                    document.getElementById("inDateT").value = dateF;
+                    document.getElementById("inDateI").value = back;
+                } else {
+                    document.getElementById("inDateT").value = sum;
+                    document.getElementById("inDateI").value = back;
+                }
+            }
+
+
+        
     </script>
 
     <script>
